@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.82343a8d.css",
-    "main.js": "/static/js/main.1f05587b.js",
-    "index.html": "/index.html",
-    "main.82343a8d.css.map": "/static/css/main.82343a8d.css.map",
-    "main.1f05587b.js.map": "/static/js/main.1f05587b.js.map"
+    "main.css": "/react-redux-toolkit-counter-app/static/css/main.0cc61290.css",
+    "main.js": "/react-redux-toolkit-counter-app/static/js/main.61c152d6.js",
+    "index.html": "/react-redux-toolkit-counter-app/index.html",
+    "main.0cc61290.css.map": "/react-redux-toolkit-counter-app/static/css/main.0cc61290.css.map",
+    "main.61c152d6.js.map": "/react-redux-toolkit-counter-app/static/js/main.61c152d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.82343a8d.css",
-    "static/js/main.1f05587b.js"
+    "static/css/main.0cc61290.css",
+    "static/js/main.61c152d6.js"
   ]
 }
