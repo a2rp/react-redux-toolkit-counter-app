@@ -1,69 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, updateNumber, reset } from '../../redux/slices/counterSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment, reset, updateNumber } from "../../redux/slices/counterSlice";
+import styles from "../../styles.module.scss";
 
 const Counter = () => {
-    const dispatch = useDispatch();
-    const count = useSelector(state => state.counter.count);
-    const number = useSelector(state => state.counter.number);
-    const [incrementText, setIncrementText] = useState("Increment by " + number);
-    const [decrementText, setDecrementText] = useState("Decrement by " + number);
-
-    const handleNumberChange = (event) => {
-        const value = event.target.value.replace(/\D/g, "");
-        dispatch(updateNumber(Number(value)));
-    };
-
-    useEffect(() => {
-        setIncrementText("Increment by " + number);
-        setDecrementText("Decrement by " + number);
-    }, [number]);
-
-    return (
-        <div>
-
-            <div
-                style={{ marginTop: "30px", fontWeight: 900, fontSize: "30px" }}
-            >Count = {count}</div>
-
-            <div style={{
-                marginTop: "15px",
-                display: "flex",
-                gap: "15px"
-            }}>
-                <input
-                    type="text"
-                    value={number}
-                    onChange={handleNumberChange}
-                    style={{ paddingLeft: "15px" }}
-                />
-
-                <input
-                    type="button"
-                    value={incrementText}
-                    onClick={() => dispatch(increment())}
-                    style={{ padding: "5px" }}
-                />
-
-                <input
-                    type="button"
-                    value={decrementText}
-                    onClick={() => dispatch(decrement())}
-                    style={{ padding: "5px" }}
-                />
-
-                <input
-                    type="button"
-                    value="Reset"
-                    onClick={() => dispatch(reset())}
-                    style={{ padding: "5px" }}
-                />
-            </div>
-        </div>
-    )
-}
-
-export default Counter
-
-
-
+  const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.count);
+  const number = useSelector((state) => state.counter.number);
+  const handleNumberChange = (event) => dispatch(updateNumber(Number(event.target.value.replace(/\D/g, "")) || 0));
+  return <div className={styles.counterArea}><div className={styles.countLabel}>Current count</div><output className={styles.count} aria-live="polite">{count}</output><label className={styles.stepLabel} htmlFor="stepValue">Step value</label><input className={styles.stepInput} id="stepValue" type="number" min="1" value={number} onChange={handleNumberChange} /><div className={styles.actions}><button className={styles.actionButton} type="button" onClick={() => dispatch(decrement())} aria-label={`Decrement by ${number}`}>− {number}</button><button className={styles.actionButton} type="button" onClick={() => dispatch(increment())} aria-label={`Increment by ${number}`}>+ {number}</button></div><button className={styles.resetButton} type="button" onClick={() => dispatch(reset())}>Reset counter</button></div>;
+};
+export default Counter;

@@ -1,13 +1,7 @@
 import Counter from "./components/counter";
 import styles from "./styles.module.scss";
 
-function App() {
-    return (
-        <div className={styles.container}>
-            <h1 className={styles.appHeading}>Counter app using "react-redux, redux-toolkit"</h1>
-            <Counter />
-        </div>
-    );
-}
+const links = [["Portfolio", "https://www.ashishranjan.net/", "↗"], ["GitHub", "https://github.com/a2rp", "GH"], ["CodePen", "https://codepen.io/ash1198", "CP"], ["LinkedIn", "https://www.linkedin.com/in/aashishranjan", "in"], ["Facebook", "https://www.facebook.com/theash.ashish/", "f"], ["YouTube", "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1", "▶"], ["Email", "mailto:ash.ranjan09@gmail.com", "@"], ["Support", "https://a2rp-donation-page.netlify.app/", "♥"], ["Buy Me a Coffee", "https://buymeacoffee.com/a2rp", "☕"], ["Patreon", "https://patreon.com/ashishranjan", "P"]];
 
+const App = () => <div className={styles.container}><header className={styles.header}><a className={styles.brand} href="https://github.com/a2rp/react-redux-toolkit-counter-app" target="_blank" rel="noopener noreferrer"><img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Ashish Ranjan logo" /><span>Adjustable Redux Counter</span></a><span className={styles.headerNote}>Choose your increment step</span></header><main className={styles.main}><section className={styles.card}><p className={styles.eyebrow}>Redux Toolkit</p><h1>Count with control.</h1><p className={styles.description}>Set a step value, then increment or decrement the shared Redux state.</p><Counter /></section></main><footer className={styles.footer}><p>Copyright © {new Date().getFullYear()} <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a></p><nav aria-label="Links and support">{links.map(([label, href, icon]) => <a key={label} href={href} title={label} aria-label={label} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>{icon}</a>)}</nav></footer></div>;
 export default App;
