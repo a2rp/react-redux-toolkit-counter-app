@@ -9,6 +9,7 @@ A responsive React counter powered by Redux Toolkit. Set the step value, then in
 - Reset control for count and step state
 - Accessible numeric input and button labels
 - Fixed branded header, responsive card and icon-only footer links
+- Floating go-to-top control with smooth scrolling
 
 ## Tech Stack
 
