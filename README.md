@@ -13,13 +13,13 @@ A responsive React counter powered by Redux Toolkit. Set the step value, then in
 
 ## Tech Stack
 
-React, Redux Toolkit, React Redux, Create React App, Sass and CSS Modules.
+React, Redux Toolkit, React Redux, Vite, Sass and CSS Modules. Use Node.js 20.19+ or 22.12+.
 
 ## Run locally
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Build and deploy
